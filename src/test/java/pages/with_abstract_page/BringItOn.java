@@ -25,14 +25,15 @@ public class BringItOn extends AbstractPage {
     }
 
 
-    public void bringItOn() {
-        textField.sendKeys("git config --global user.name  \"New Sheriff in Town\"\n" +
+    public int bringItOn() {
+        writeText(textField,"git config --global user.name  \"New Sheriff in Town\"\n" +
                 "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
                 "git push origin master --force");
-        pasteExpiration.selectByVisibleText("10 Minutes");
-        syntaxHighlighting.selectByVisibleText("Bash");
-        titleField.sendKeys("how to gain dominance among developers");
+        selectByText(syntaxHighlighting,"Bash");
+        selectByText(pasteExpiration,"10 Minutes");
+        writeText(titleField,"how to gain dominance among developers");
         pasteNote.get(0).click();
+        return pasteNote.size();
     }
 
 

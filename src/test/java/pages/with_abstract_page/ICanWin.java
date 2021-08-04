@@ -29,11 +29,5 @@ public class ICanWin extends AbstractPage {
         pasteNote.get(0).click();
         return pasteNote.size();
     }
-    public void writeText(WebElement webElement, String text){
-        webElement.sendKeys(text);
-    }
-    public void selectByText(Select selector,String text){
-        selector.selectByVisibleText(text);
-    }
 
 }

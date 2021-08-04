@@ -2,9 +2,12 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pages.with_abstract_page.BringItOn;
+import pages.with_abstract_page.ICanWin;
 
 public class BringItOnTest {
     private WebDriver webDriver;
@@ -14,7 +17,10 @@ public class BringItOnTest {
         webDriver = new ChromeDriver();
     }
     @Test
-
+    public void bringItOn(){
+        int isSizeNotNull = new BringItOn(webDriver).bringItOn();
+        Assert.assertTrue(isSizeNotNull>0,"Size is not Null");
+    }
     @AfterMethod
     public void getBrowserDown() {
         webDriver.quit();
