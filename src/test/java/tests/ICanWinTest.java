@@ -14,6 +14,7 @@ public class ICanWinTest {
     @BeforeMethod(alwaysRun = true)
     public void browserSetup() throws InterruptedException {
         webDriver = new ChromeDriver();
+
     }
 
     @Test
@@ -22,7 +23,7 @@ public class ICanWinTest {
         Assert.assertTrue(isSizeNotNull > 0, "Size is not Null");
     }
 
-    @AfterMethod
+    @AfterMethod(enabled = false)
     public void browserClose() {
         webDriver.quit();
     }

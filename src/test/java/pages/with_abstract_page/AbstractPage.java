@@ -1,9 +1,11 @@
 package pages.with_abstract_page;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,7 +21,7 @@ public abstract class AbstractPage {
     @FindBy(xpath = "//*[@id='w0']/div[5]/div[1]/div[8]/button")
     protected List<WebElement> pasteNote;
     @FindBy(id = "select2-postform-expiration-container")
-    protected Select pasteExpiration;
+    protected WebElement pasteExpiration;
     @FindBy(id = "select2-postform-format-container")
     protected Select syntaxHighlighting;
 
@@ -30,8 +32,6 @@ public abstract class AbstractPage {
 
     public AbstractPage openPage() {
         webDriver.get(HOMEPAGE_URL);
-        new WebDriverWait(webDriver, 10)
-                .until(CustomConditions.jQueryAJAXsCompleted());
         return this;
     }
 

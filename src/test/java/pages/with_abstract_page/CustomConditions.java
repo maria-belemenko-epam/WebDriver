@@ -12,7 +12,7 @@ public class CustomConditions {
             @Override
             public Boolean apply(WebDriver webDriver) {
                 return (Boolean) ((JavascriptExecutor) webDriver)
-                        .executeScript("return(window.jQuery !=null) && (jQuery.active == = 0); ");
+                        .executeScript("return(window.jQuery != null) && (jQuery.active == = 0); ");
             }
         };
     }
