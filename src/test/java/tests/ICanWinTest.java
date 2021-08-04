@@ -12,14 +12,14 @@ public class ICanWinTest {
     private WebDriver webDriver;
 
     @BeforeMethod(alwaysRun = true)
-    public void browserSetup() {
+    public void browserSetup() throws InterruptedException {
         webDriver = new ChromeDriver();
     }
 
     @Test
-    public void iCanWinTest() throws InterruptedException {
+    public void iCanWinTest() {
         int isSizeNotNull = new ICanWin(webDriver).win();
-        Assert.assertTrue(isSizeNotNull>0,"Size is not Null");
+        Assert.assertTrue(isSizeNotNull > 0, "Size is not Null");
     }
 
     @AfterMethod
