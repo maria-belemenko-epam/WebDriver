@@ -1,13 +1,10 @@
-package pages.with_abstract_page;
+package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -18,7 +15,7 @@ public abstract class AbstractPage {
     protected WebElement textField;
     @FindBy(id = "postform-name")
     protected WebElement titleField;
-    @FindBy(xpath = "//*[@id='w0']/div[5]/div[1]/div[8]/button")
+    @FindBy(id="w0")
     protected List<WebElement> pasteNote;
     @FindBy(id = "select2-postform-expiration-container")
     protected WebElement pasteExpiration;

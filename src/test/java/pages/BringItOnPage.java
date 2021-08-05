@@ -1,13 +1,13 @@
-package pages.with_abstract_page;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class BringItOn extends AbstractPage {
+public class BringItOnPage extends AbstractPage {
 
 
-    public BringItOn(WebDriver webDriver) {
+    public BringItOnPage(WebDriver webDriver) {
         super(webDriver);
     }
     @FindBy(id = "select2-postform-expiration-container")

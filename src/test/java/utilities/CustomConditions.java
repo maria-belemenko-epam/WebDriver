@@ -1,4 +1,4 @@
-package pages.with_abstract_page;
+package utilities;
 
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 import org.openqa.selenium.JavascriptExecutor;

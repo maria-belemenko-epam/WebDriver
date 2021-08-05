@@ -6,20 +6,20 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.with_abstract_page.ICanWin;
+import pages.ICanWinPage;
 
 public class ICanWinTest {
     private WebDriver webDriver;
 
     @BeforeMethod(alwaysRun = true)
-    public void browserSetup() throws InterruptedException {
+    public void browserSetup() {
         webDriver = new ChromeDriver();
 
     }
 
     @Test
     public void iCanWinTest() {
-        int isSizeNotNull = new ICanWin(webDriver).win();
+        int isSizeNotNull = new ICanWinPage(webDriver).win();
         Assert.assertTrue(isSizeNotNull > 0, "Size is not Null");
     }
 
